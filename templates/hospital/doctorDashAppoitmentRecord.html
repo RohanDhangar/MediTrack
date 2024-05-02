@@ -15,7 +15,12 @@
     {% for app,p in appointments %}
         <tr>
        
-        <td><img src="{{p.profile_pic.url}}" style="border-radius: 50%; width: 3rem;" alt=""></td>
+        {% comment %} <td><img src="{{p.profile_pic.url}}" style="border-radius: 50%; width: 3rem;" alt=""></td> {% endcomment %}
+        <td>
+            {% if p.profile_pic %}
+                <td><img src="{{p.profile_pic.url}}" style="border-radius: 50%; width: 3rem;" alt=""></td>
+            {% endif %}
+        </td>
         <td>{{app.patientName}}</td>
         <td>{{p.mobile}}</td>
         <td>{{p.address}}</td>

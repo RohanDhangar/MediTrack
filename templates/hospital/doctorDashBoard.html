@@ -106,7 +106,12 @@
               </tr>
               {% for a,p in appointments %}
               <tr>
-                <td><img src="{{p.profile_pic.url}}" alt=" " style="border-radius: 50%; width: 3rem;"></td>
+                {% comment %} <td><img src="{{p.profile_pic.url}}" alt=" " style="border-radius: 50%; width: 3rem;"></td> {% endcomment %}
+                <td>
+                  {% if p.profile_pic %}
+                      <td><img src="{{p.profile_pic.url}}" style="border-radius: 50%; width: 3rem;" alt=""></td>
+                  {% endif %}
+                </td>
                 <td>{{a.patientName}}</td>
                 <td>{{a.description}}</td>
                 <td>{{p.mobile}}</td>

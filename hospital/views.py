@@ -90,7 +90,7 @@ def ViewPatientSignup(request):
         else:
             return render(request,'hospital/patientSignup.html',locals())
 
-        
+
 
     return render(request,'hospital/patientSignup.html',locals())
 

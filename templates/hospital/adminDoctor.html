@@ -14,7 +14,12 @@
     </tr>
     {% for doctor in doctors %}
         <tr>
-        <td><img id="doctorImg" src="{{doctor.profile_pic.url}}" alt=""></td>
+        {% comment %} <td><img id="doctorImg" src="{{doctor.profile_pic.url}}" alt=""></td> {% endcomment %}
+        <td>
+            {% if doctor.profile_pic %}
+                <img id="doctorImg" src="{{ doctor.profile_pic.url }}" alt="Image is not available">
+            {% endif %}
+        </td>
         <td>{{doctor.user.username}}</td>
         <td>{{doctor.mobile}}</td>
         <td>{{doctor.address}}</td>
